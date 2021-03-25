@@ -28,8 +28,8 @@ jobs:
     
     - uses: actions/upload-artifact@main
       with:
-      name: webpack artifacts
-      path: public/
+        name: webpack artifacts
+        path: public/
   test:
      needs: build
      runs-on: ubuntu-latest
@@ -38,7 +38,7 @@ jobs:
         node-version: [12.x, 14.x]
         os: [ubuntu-latest, windows-2016]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-      steps:
+     steps:
       - uses: actions/checkout@v2
       - uses: actions/download-artifact@main
         with:
@@ -53,5 +53,4 @@ jobs:
          npm install 
          npm install 
         env:
-    CI: true
-    
+          CI: true
